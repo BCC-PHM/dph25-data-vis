@@ -35,6 +35,7 @@ for (indicator_i in indicators) {
     str_to_title(
       strsplit(data_i$IndicatorName[1], ": ")[[1]][2]
     ),
+    ifelse(grepl("Healthy", indicator_i), " (65+)", ""),
     " (", data_i$Year[[1]], ")"
   )
   

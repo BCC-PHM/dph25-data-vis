@@ -46,6 +46,7 @@
       str_to_title(
         strsplit(indicator_i, ": ")[[1]][2]
       ),
+      ifelse(grepl("Healthy", indicator_i), " (65+)", ""),
       " (", eth_data_i$Year[[1]], ")"
     )
   
@@ -108,6 +109,7 @@
       str_to_title(
         strsplit(indicator_i, ": ")[[1]][2]
       ),
+      ifelse(grepl("Healthy", indicator_i), " (65+)", ""),
       " (", imd_data_i$Year[[1]], ")"
     )
     
@@ -117,7 +119,7 @@
         strsplit(indicator_i, ": ")[[1]][2], " ", "_"),
       "_IMD.png"
     )
-    
+    print(imd_title_i)
     # Plot IMD data
     imd_plot_i <- ggplot(
       imd_data_i,
