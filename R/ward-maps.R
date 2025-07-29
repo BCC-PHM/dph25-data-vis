@@ -39,10 +39,9 @@ for (indicator_i in indicators) {
   )
   
   save_name_i <- paste0(
-    "output/",
+    "output/ward-maps/",
     str_replace_all(
-      strsplit(data_i$IndicatorName[1], ": ")[[1]][2]
-      , " ", "_"),
+      strsplit(data_i$IndicatorName[1], ": ")[[1]][2], " ", "_"),
     ".png"
   )
   
